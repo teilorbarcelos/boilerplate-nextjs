@@ -3,7 +3,7 @@ import styles from "./Loading.module.css";
 
 export function Loading() {
   return (
-    <div className={styles.container}>
+    <div data-testid="loading-container" className={styles.container}>
       <Image
         width={70}
         height={70}
