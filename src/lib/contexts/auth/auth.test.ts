@@ -1,18 +1,34 @@
-import { render, act } from "@testing-library/react";
-import { useAuthStore } from ".";
+import { act } from "@testing-library/react";
+import { useAuthStore, UserInfoProps } from ".";
 
 describe("useAuthStore", () => {
-  test("should set loggedIn to true when called with true", () => {
-    act(() => {
-      useAuthStore.getState().loggedIn = true;
-    });
-    expect(useAuthStore.getState().loggedIn).toBe(true);
+  beforeEach(() => {
+    useAuthStore.setState({ loggedIn: false, userInfo: undefined });
   });
 
-  test("should set loggedIn to false when called with false", () => {
+  test("default state", () => {
+    const { loggedIn, userInfo } = useAuthStore.getState();
+    expect(loggedIn).toBe(false);
+    expect(userInfo).toBeUndefined();
+  });
+
+  test("sets loggedIn state", () => {
+    const loggedIn = true;
     act(() => {
-      useAuthStore.getState().loggedIn = false;
+      useAuthStore.setState({ loggedIn });
     });
-    expect(useAuthStore.getState().loggedIn).toBe(false);
+    expect(useAuthStore.getState().loggedIn).toBe(loggedIn);
+  });
+
+  test("sets userInfo state", () => {
+    const userInfo: UserInfoProps = {
+      id: "123",
+      name: "John Doe",
+      email: "john.doe@example.com",
+    };
+    act(() => {
+      useAuthStore.setState({ userInfo });
+    });
+    expect(useAuthStore.getState().userInfo).toEqual(userInfo);
   });
 });
