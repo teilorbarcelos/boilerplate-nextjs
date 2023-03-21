@@ -1,11 +1,14 @@
-import { useAuthStore } from "@/lib/auth";
+import { useAuthStore } from "@/lib/contexts/auth";
 import "@/styles/globals.css";
 import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Loading } from "@/components/Loading";
+import { useLoadingStore } from "@/lib/contexts/loading";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { isLoading } = useLoadingStore();
   const router = useRouter();
   const { loggedIn } = useAuthStore();
 
@@ -16,8 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [loggedIn, router]);
 
   return (
-    <div className="bg-gray-100">
-      <Component {...pageProps} />
-    </div>
+    <>
+      {isLoading && <Loading />}
+      <div className="bg-gray-100">
+        <Component {...pageProps} />
+      </div>
+    </>
   );
 }
