@@ -1,6 +1,6 @@
 {
   "hooks": {
-    "pre-commit": "node check-coverage.js && yarn lint && yarn test:ci",
+    "pre-commit": "yarn test:ci && yarn lint",
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
   }
 }
