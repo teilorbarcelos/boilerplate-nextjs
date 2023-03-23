@@ -10,6 +10,7 @@ const customJestConfig = {
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
+  coveragePathIgnorePatterns: ["/src/mocks/"],
 };
 
 module.exports = createJestConfig(customJestConfig);

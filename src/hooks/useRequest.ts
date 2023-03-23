@@ -28,7 +28,6 @@ export const useRequest = () => {
         if (isAxiosError(error)) {
           return Promise.reject(error.message);
         }
-        return Promise.reject(error);
       }
     );
 
