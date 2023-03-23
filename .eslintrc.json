@@ -8,6 +8,7 @@
     "no-unused-vars": "warn",
     "no-undef": "error",
     "no-empty": "warn",
+    "eol-last": "warn",
     "no-mixed-spaces-and-tabs": "error",
     "semi": "error",
     "indent": [
