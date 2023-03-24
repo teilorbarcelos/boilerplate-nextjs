@@ -39,4 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Pre-configured Features:
 
-zustand, jest, msw, tailwindcss, axios and react-use hooks.
+zustand, jest, msw, tailwindcss, axios, eslint, editorconfig, husky, commitlint and react-use hooks.
