@@ -1,5 +1,5 @@
 import { act } from "@testing-library/react";
-import { useLoadingStore } from ".";
+import { useLoadingStore } from "@/lib/contexts/loading";
 
 describe("useLoadingStore", () => {
   test("should set isLoading to true when showLoading is called", () => {

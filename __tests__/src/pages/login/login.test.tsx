@@ -1,6 +1,6 @@
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { useAuthStore } from "@/lib/contexts/auth";
-import Login from ".";
+import Login from "@/pages/login";
 import { useRouter } from "next/router";
 
 describe("Login component", () => {

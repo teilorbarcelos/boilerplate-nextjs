@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { useRequest } from ".";
+import { useRequest } from "@/hooks/useRequest";
 import { act } from "@testing-library/react";
 
 describe("useRequest", () => {

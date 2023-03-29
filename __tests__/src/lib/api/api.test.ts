@@ -1,6 +1,4 @@
-import api from ".";
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import api from "@/lib/api";
 
 describe("API", () => {
   it("should fetch data from the API", async () => {

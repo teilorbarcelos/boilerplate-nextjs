@@ -1,5 +1,5 @@
 import { act } from "@testing-library/react";
-import { useAuthStore, UserInfoProps } from ".";
+import { useAuthStore, UserInfoProps } from "@/lib/contexts/auth";
 
 describe("useAuthStore", () => {
   beforeEach(() => {
