@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {isLoading && <Loading />}
-      <div className="bg-gray-100">
+      <div>
         <Component {...pageProps} />
       </div>
     </>

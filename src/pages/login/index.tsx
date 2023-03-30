@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className={styles.container}>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin} className="font-bold">Login</button>
     </div>
   );
 }
