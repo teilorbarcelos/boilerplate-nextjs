@@ -20,12 +20,14 @@ describe("TranslationTest", () => {
     const switchLanguageButton = screen.getByText(
       translations.switchLanguage[Language.PT_BR]
     );
+
     fireEvent.click(switchLanguageButton);
 
     await act(async () => {
       const helloWorldText = await screen.findByText(
         translations.helloWorld[Language.EN]
       );
+
       expect(helloWorldText).toBeInTheDocument();
     });
   });
@@ -36,12 +38,14 @@ describe("TranslationTest", () => {
     const switchLanguageButton = screen.getByText(
       translations.switchLanguage[Language.EN]
     );
+
     fireEvent.click(switchLanguageButton);
 
     await act(async () => {
       const switchLanguageButtonText = await screen.findByText(
         translations.switchLanguage[Language.PT_BR]
       );
+
       expect(switchLanguageButtonText).toBeInTheDocument();
     });
   });

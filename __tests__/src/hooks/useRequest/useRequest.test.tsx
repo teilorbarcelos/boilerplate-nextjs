@@ -11,6 +11,7 @@ describe("useRequest", () => {
         method: "get",
         url: `/use-request`,
       });
+
       expect(JSON.stringify(response.data)).toBe('{"name":"John Doe"}');
     });
   });
@@ -20,7 +21,7 @@ describe("useRequest", () => {
       const { result } = renderHook(() => useRequest());
 
       await act(async () => {
-        const response = await result.current.request({
+        await result.current.request({
           method: "get",
           url: `/wrong-route`,
         });

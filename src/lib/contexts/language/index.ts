@@ -3,7 +3,6 @@ import { Language } from "./language.constants";
 
 interface LanguageStore {
   language: Language;
-  // eslint-disable-next-line no-unused-vars
   setLanguage: (language: Language) => void;
 }
 
