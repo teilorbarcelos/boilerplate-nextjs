@@ -9,5 +9,9 @@ export const translations: Translations = {
   login: {
     [Language.EN]: "SignIn",
     [Language.PT_BR]: "Login",
+  },
+  switchLanguage: {
+    [Language.EN]: "Switch Language",
+    [Language.PT_BR]: "Alternar Idioma",
   }
 };

@@ -4,6 +4,5 @@ export interface Translations {
   [key: string]: {
     [Language.EN]: string;
     [Language.PT_BR]: string;
-    [Language.DEFAULT]: string;
   };
 }

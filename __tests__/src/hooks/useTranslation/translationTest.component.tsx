@@ -2,7 +2,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguageStore } from "@/lib/contexts/language";
 import { Language } from "@/lib/contexts/language/language.constants";
 
-export default function Home() {
+export default function TranslationTest() {
   const { language, setLanguage } = useLanguageStore();
   const t = useTranslation();
 
