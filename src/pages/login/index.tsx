@@ -3,7 +3,8 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { useAuthStore, UserInfoProps } from "@/lib/contexts/auth";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import styles from "./login.module.css";
+import { Button } from "@/components/Button";
+import { LoginContainer } from "./login.styles";
 
 export default function Login() {
   const t = useTranslation();
@@ -28,8 +29,8 @@ export default function Login() {
   }, [loggedIn, router]);
 
   return (
-    <div className={styles.container}>
-      <button onClick={handleLogin} className="font-bold">{t("login")}</button>
-    </div>
+    <LoginContainer>
+      <Button onClick={handleLogin}>{t("login")}</Button>
+    </LoginContainer>
   );
 }

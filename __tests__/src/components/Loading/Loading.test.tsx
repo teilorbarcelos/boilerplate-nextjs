@@ -20,10 +20,4 @@ describe("Loading component", () => {
     expect(loadingImg.width).toBe(70);
     expect(loadingImg.height).toBe(70);
   });
-
-  test("container has correct class name", () => {
-    const { getByTestId } = render(<Loading />);
-    const container = getByTestId("loading-container");
-    expect(container).toHaveClass("container");
-  });
 });

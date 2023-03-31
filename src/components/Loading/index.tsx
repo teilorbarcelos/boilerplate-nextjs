@@ -1,16 +1,16 @@
 import Image from "next/image";
-import styles from "./Loading.module.css";
+import { LoadingContainer } from "./loading.styles";
 
 export function Loading() {
   return (
-    <div data-testid="loading-container" className={styles.container}>
+    <LoadingContainer data-testid="loading-container">
       <Image
         width={70}
         height={70}
-        className={styles.loadingImg}
+        className={"loadingImg"}
         src="/icons/loading-gif.gif"
         alt="Loading image"
       />
-    </div>
+    </LoadingContainer>
   );
 }
