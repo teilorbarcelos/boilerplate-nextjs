@@ -13,5 +13,9 @@ export const translations: Translations = {
   switchLanguage: {
     [Language.EN]: "Switch Language",
     [Language.PT_BR]: "Alternar Idioma",
+  },
+  switchTheme: {
+    [Language.EN]: "Switch Theme",
+    [Language.PT_BR]: "Alternar Tema",
   }
 };

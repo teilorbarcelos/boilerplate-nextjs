@@ -1,7 +1,14 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import {
+  act,
+  fireEvent,
+  render,
+  renderHook,
+  screen,
+} from "@testing-library/react";
 import Home from "@/pages/index";
 import { Language } from "@/lib/contexts/language/language.constants";
 import { translations } from "@/hooks/useTranslation/translations";
+import { Theme, useThemeStore } from "@/lib/contexts/theme";
 
 describe("Home", () => {
   test("renders helloWorld text in Portuguese by default", () => {
@@ -44,5 +51,16 @@ describe("Home", () => {
       );
       expect(switchLanguageButtonText).toBeInTheDocument();
     });
+  });
+
+  test("changes theme when theme button is clicked", () => {
+    const { result } = renderHook(() => useThemeStore());
+    const { getByTestId } = render(<Home />);
+    const themeButton = getByTestId("switch-theme-button");
+    expect(result.current.themeState).toBe(Theme.DARK);
+    fireEvent.click(themeButton);
+    expect(result.current.themeState).toBe(Theme.LIGHT);
+    fireEvent.click(themeButton);
+    expect(result.current.themeState).toBe(Theme.DARK);
   });
 });
